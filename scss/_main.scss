@@ -1,0 +1,552 @@
+@charset "UTF-8";
+
+*,
+*:before,
+*:after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
+body{
+   font-family:'Hind', sans-serif;
+   line-height: 1.8;
+}
+
+/** Classe para Centralizar**/
+.container {
+   max-width:970px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/**Flexbox**/
+.flex-box{
+   display:-webkit-box;
+   display:-ms-flexbox;
+   display:flex;
+   -webkit-box-pack: justify;
+       -ms-flex-pack: justify;
+           justify-content: space-between;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+       -ms-flex-wrap:wrap;
+           flex-wrap: wrap;
+   }
+  
+/*Header*/
+header { 
+    position:fixed;
+    top:0;
+    z-index: 3;
+    width:100%;
+    font-weight:300;
+    color:#fff;
+    background-color:rgba(36, 36, 51, 0);
+    height: 50px;
+}
+
+/*Menu*/
+.menu {
+   display:none; //para desktop
+   background: $purple-color;
+   border-radius: 3px;
+   width: 30px;
+   height: 30px;
+   position: fixed;
+   top: 8px;
+   right: 20px;
+   -webkit-transition: right 0.1s cubic-bezier(0.35, 0.19, 0.45, 0.91);
+   transition: right 0.1s cubic-bezier(0.35, 0.19, 0.45, 0.91);
+
+   
+}
+
+/*Animação*/
+.hamburguer {
+   position: relative;
+   display: inline-block;
+   background: #fff;
+   width: 20px;
+   height: 2px;
+   top: 6px;
+   right: -5px;
+   transition: .5s ease-in-out;
+}
+.hamburguer:before,
+.hamburguer:after {
+   background: #fff;
+   content: '';
+   display: block;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   transition: .5s ease-in-out;
+}
+
+.hamburguer:before {
+   top: 8px;
+}
+
+.hamburguer:after {
+   top:16px;
+}
+
+input {
+   display: none;
+}
+
+
+input:checked ~ label .hamburguer {
+   transform: rotate(45deg);
+   top:14px;
+}
+
+input:checked ~ label .hamburguer:before {
+   transform: rotate(90deg);
+   top: 0;
+}
+
+input:checked ~ label .hamburguer:after {
+   transform: rotate(90deg);
+   top: 0;
+}
+
+.move .menu{
+  right:280px;
+
+}
+/*End Animação*/
+
+.show .nav {
+   opacity: 1;
+   visibility: visible;
+   width:70vw;
+   right:2px;
+
+
+}
+
+.nav {
+   position: fixed;
+   padding:10px;
+   top: 0;
+   right:0;
+   max-width: 80%;
+   height: 100vh;
+   background-color: white;
+   -webkit-transition: right 2s cubic-bezier(0.35, 0.19, 0.45, 0.91);
+   transition: right 2s cubic-bezier(0.35, 0.19, 0.45, 0.91);
+   visibility: hidden;
+   z-index: 4;
+  // transition: .3s ease-in;
+   
+}
+.nav a{
+   font-weight:600;
+   color:#34314B;
+}
+
+.nav ul li{
+   display:block;
+} 
+/*logo*/
+header a img{
+   width:120px;
+   height:90%;
+}
+
+header div{
+   height:100%;
+}
+
+.fx header{
+   background-color: $bg-color-fx;
+   transition: all .5s;
+}
+
+header ul li { 
+   list-style: none;
+   display: inline;
+}
+
+
+
+/*Link geral */
+a{
+   text-decoration: none;
+   padding:5px;
+   color:#fff;
+}
+
+a:hover{
+   color: $purple-color;
+}
+
+/*Section geral*/
+section{
+    margin-bottom: $external-spacing;
+    padding: $internal-spacing;
+    font-weight:400;
+    color: #68687C;
+}
+
+/*Div e article da section*/
+section div, article {
+   margin:$external-spacing;
+   background-color:#fefefe;
+}
+
+section h1 {
+   font-weight:600;
+   color: $purple-color;
+   //#34314B
+}
+
+/*Para H1 ocupar a linha inteira*/
+.flex-basis-grow{
+   flex-grow: 1;
+   flex-basis: 960px;
+}
+
+/*Intro*/
+#intro {
+   position: relative;
+   width: 100%;
+   max-width: 100%;
+   height: 100vh;
+   max-height: 100vh;
+   background-image:url('../images/safar-safarov-1509070-unsplash.jpg');
+   background-attachment: fixed;
+   background-position:center center;
+   background-size:cover;
+   background-repeat:no-repeat;
+   margin-bottom:0;
+}
+
+.fa-angle-down{
+   color:#fff;
+}
+
+.scroll-down-icon {
+   position: absolute;
+   left: 50%;
+   bottom: 30px;
+   -webkit-animation: scroll-down-anim 1s infinite;
+   -moz-animation: scroll-down-anim 1s infinite;
+   -o-animation: scroll-down-anim 1s infinite;
+   animation: scroll-down-anim 1s infinite;
+   z-index: 2;
+}
+
+@keyframes scroll-down-anim{
+   0% {bottom:30px;}
+   100% {bottom:40px; }
+}
+
+#intro .row{
+   position: absolute;
+   right:10px;
+   left: 10px;
+   color:#fff;
+   font-size:3em;
+   text-align:center;
+   line-height: 1em;
+}
+
+.row:nth-child(1){ 
+   top:200px;
+   font-weight: 900;
+   letter-spacing: 5px;
+}
+
+.row:nth-child(2){
+   top:260px;
+}
+
+/* Sobre - foto */
+#sobre {
+   background:#F4F6F7;
+}
+
+#sobre .container {
+   justify-content: center;
+}
+
+#sobre img{
+    width:$size;
+    height:$size;
+    border-radius:50%;
+    object-fit: cover;
+    
+}
+
+#sobre div {
+   background:transparent;
+   text-align:center;
+}
+#sobre .photo {margin-bottom:-10px;}
+
+#sobre h1{
+   font-size:28px;
+}
+
+
+
+/*Habilidades*/
+#skills{
+   align-items: flex-start;
+}
+
+.skill-item{
+   display:flex;
+   flex-direction: column;
+   //flex:1;
+   //padding:0;
+  // padding:$internal-spacing;
+   width:calc (100% / 4 );
+}
+
+.skill-item:nth-child(4){
+   flex:2;
+}
+
+.skill-item:hover i{
+   color:$purple-color;
+   cursor:text;
+}
+
+.skill-item i, .skill-item h3, .skill-item ul{
+   text-align:center;
+   padding:10px;
+}
+
+.skill-item ul li{
+   padding:5px;
+   //padding:5px 0 5px 0;
+}
+
+.idiomas .ul-idiomas li {
+   display:inline;
+}
+
+.skill-item ul > li{
+   list-style: none;
+}
+
+.star{
+   width:20px;
+   height:20px;
+ }
+ 
+ /*Formação Academica*/
+
+ .form-item{
+   padding:$internal-spacing;
+   background-color:#fefefe;
+ }
+
+  .fa-school, .fa-user-graduate{
+   margin: 0px 24px 24px 0px;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 14px;
+   padding: 20px;
+   border-radius: 50%;
+   float:left;
+ }
+
+.clear{clear: left;
+}
+
+.form-item h3{margin-top:20px} //para versão mobile tirar ess atributo
+
+/*Portfólio*/
+
+.port-item{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width:420px;
+    height:260px;
+}
+
+.port-item img{
+   width:390px;
+   height:190px;
+   overflow: hidden;
+   border:none;
+   border-radius:5px;
+}
+
+.port-item a{
+   position:relative;
+}
+
+.port-item a:before{
+   position:absolute;
+   content:'';
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   background-color: transparent;
+   transition:all .5s;
+}
+
+.port-item a:after{
+   opacity:0;
+}
+
+.port-item a:hover:after{
+   content:'Veja Mais';
+   position:absolute;
+   border:3px solid white;
+   color:white;
+   top:50%;
+   left:50%;
+   padding:10px 20px;
+   transform: translate(-50%, -50%);
+   opacity:1;
+}
+
+.port-item a:hover:before{
+   background-color:rgba(0,0, 0, 0.5);
+}
+
+.port-item a img{
+   width: 100%
+}
+/*Contato*/
+
+#contato{
+   background-color:#F4F4F4;
+  // #ccc;
+   //#C0C9D7;
+   color:#34314B;
+   margin-bottom: 0;
+   text-align: center;   
+}
+
+#contato div{
+   background-color:inherit;
+} 
+
+
+.contato-item:last-child{
+   width:100%;
+   justify-content: space-between;
+   flex-direction: row-reverse;   
+ }
+
+ .contato-item div{
+    padding:$internal-spacing;
+ }
+
+.contato-item a {
+   color:#34314B;
+}
+
+.contato-item a:hover {
+   color:$purple-color;
+}
+
+.social li{
+ display: inline;
+ list-style: none;
+ padding:0;
+
+}
+
+.coloredLine {
+   margin: auto;
+   width: 80px;
+   border-bottom: 1px dashed #34314B;
+}
+
+.fa-envelope, .fa-mobile-alt, .fa-github, .fa-twitter, .fa-linkedin-in{
+   display:block;
+   margin-bottom:15px;
+}
+
+address{
+   font-style: normal;
+}
+
+footer{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     height:100px;
+     font-family:'Hind', sans-serif;
+     font-weight:400px;
+     background-color:$bg-color-fx;
+     color: #fff;
+  }
+  
+  @keyframes pulse{
+     0% { transform: scale(.8)}
+     100% { transform: scale(1) }
+  }
+ 
+  footer img {
+     width:25px;
+     height:25px;
+     animation : pulse 1s infinite alternate ease-in-out;
+ 
+  }
+
+  footer a{
+     margin-right:5px;
+  }
+
+  footer a:hover{
+   text-decoration: underline;
+}
+
+
+@media screen and (max-width:480px){
+
+   .container{ max-width:470px;}
+  
+   header{
+      position:absolute;
+   }
+
+   header nav{
+     display:none;
+   }
+
+   header .menu{
+      display:flex;
+   }
+
+  
+
+   .form-item h3{margin-top:0;} 
+   .clear{margin-top:10px;}
+
+   #contato .contato-item div{
+      margin:0 auto;
+   }
+
+   .contato-item:last-child{
+      align-items: center;
+      flex-direction: column-reverse;   
+    }
+
+   #skills{
+      justify-content: center;
+
+   }
+   .skill-item{
+      align-items: stretch;
+
+   }
+
+ 
+
+
+}
+
+   
