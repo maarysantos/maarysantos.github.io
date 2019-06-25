@@ -561,7 +561,19 @@ footer{
     }
 
     .skill-item {
-       align-self: stretch;
+      width:100%;
+      align-self: stretch;
     }
+
+    .skill-item:nth-child(4){
+   flex:0;
+}
+
+.skill-item:nth-child(3){
+   flex:0;
+}
+
+
+
 }
 
