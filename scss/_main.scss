@@ -294,10 +294,8 @@ section h1 {
    font-size:28px;
 }
 
-
-
 /*Habilidades*/
-#skills{
+#skills {
    align-items: flex-start;
 }
 
@@ -311,6 +309,10 @@ section h1 {
 }
 
 .skill-item:nth-child(4){
+   flex:2;
+}
+
+.skill-item:nth-child(3){
    flex:2;
 }
 
@@ -516,6 +518,18 @@ footer{
      display:none;
    }
 
+   section div, article{
+      margin:0;
+   }
+  
+   #intro {
+      height: 70vh;
+      //min-height:auto;
+      //max-height: 100vh;
+   }
+   .scroll-down-page{
+      display:none;
+   }
    header .menu{
       display:flex;
    }
@@ -537,8 +551,18 @@ footer{
       flex-direction: column-reverse;   
     }
 
-   #skills{
-      justify-content: center;
-   }
+    #skill{
+      flex-direction: column;
+      justify-content:center;
+    }
+
+    .skill-item {
+       background:orange;
+       align-self: stretch;
+    }
+
+    
+
+  
 }
 
