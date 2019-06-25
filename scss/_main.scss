@@ -519,7 +519,7 @@ footer{
    }
 
    section div, article{
-      margin:0;
+      margin:$external-spacing 0 $internal-spacing 0;
    }
   
    #intro {
