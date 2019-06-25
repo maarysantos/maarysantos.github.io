@@ -60,7 +60,7 @@ header {
    right: 20px;
    -webkit-transition: right 0.1s cubic-bezier(0.35, 0.19, 0.45, 0.91);
    transition: right 0.1s cubic-bezier(0.35, 0.19, 0.45, 0.91);
-
+   cursor:pointer;
    
 }
 
@@ -215,8 +215,9 @@ section h1 {
 #intro {
    position: relative;
    width: 100%;
-   max-width: 100%;
+   max-width: 1080px;
    height: 100vh;
+   min-height:auto;
    max-height: 100vh;
    background-image:url('../images/safar-safarov-1509070-unsplash.jpg');
    background-attachment: fixed;
@@ -507,8 +508,6 @@ footer{
 
 @media screen and (max-width:480px){
 
-   .container{ max-width:470px;}
-  
    header{
       position:absolute;
    }
@@ -521,10 +520,13 @@ footer{
       display:flex;
    }
 
-  
+   .form-item h3{
+      margin-top:0;
+   } 
 
-   .form-item h3{margin-top:0;} 
-   .clear{margin-top:10px;}
+   .clear{
+      margin-top:10px;
+   }
 
    #contato .contato-item div{
       margin:0 auto;
@@ -537,16 +539,6 @@ footer{
 
    #skills{
       justify-content: center;
-
    }
-   .skill-item{
-      align-items: stretch;
-
-   }
-
- 
-
-
 }
 
-   
