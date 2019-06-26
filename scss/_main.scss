@@ -370,8 +370,8 @@ section h1 {
     display:flex;
     align-items: center;
     flex-direction: column;
-    width:420px;
-    height:260px;
+    width:350px;
+    height:300px;
 }
 
 .port-item img{
@@ -382,11 +382,11 @@ section h1 {
    border-radius:5px;
 }
 
-.port-item a{
+.port-item .link-page{
    position:relative;
 }
 
-.port-item a:before{
+.port-item .link-page:before{
    position:absolute;
    content:'';
    top:0;
@@ -397,11 +397,11 @@ section h1 {
    transition:all .5s;
 }
 
-.port-item a:after{
+.port-item .link-page:after{
    opacity:0;
 }
 
-.port-item a:hover:after{
+.port-item .link-page:hover:after{
    content:'Veja Mais';
    position:absolute;
    border:3px solid white;
@@ -413,12 +413,16 @@ section h1 {
    opacity:1;
 }
 
-.port-item a:hover:before{
+.port-item .link-page:hover:before{
    background-color:rgba(0,0, 0, 0.5);
 }
 
-.port-item a img{
+.port-item .link-page img{
    width: 100%
+}
+
+.port-item a:not(.link-page){
+   color:#68687c;
 }
 /*Contato*/
 
